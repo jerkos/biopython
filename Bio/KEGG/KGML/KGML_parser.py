@@ -67,7 +67,7 @@ def parse(handle, debug=0):
     """
     # Check handle
     if not hasattr(handle, 'read'):
-        if isinstance(handle, str):
+        if isinstance(handle, str) or isinstance(handle, unicode):
             handle = StringIO(handle)
         else:
             exc_txt = "An XML-containing handle or an XML string " +\
